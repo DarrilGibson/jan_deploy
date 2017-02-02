@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta charset="utf-8">
+      <title>Login and Registration</title>
+      {% load staticfiles %}
+      <link rel="stylesheet" href="{% static 'loginregistration/css/normalize.css' %}">
+      <link rel="stylesheet" href="{% static 'loginregistration/css/styles.css' %}">
+      <link rel="stylesheet" href="{% static 'loginregistration/css/form.css' %}">
+    </head>
+    <body>
+      <div id="wrapper">
+        <div id="header">
+          <h2> Registration</h2>
+        </div> <!-- end of header -->
+          <!-- Put div within errors to hide it until needed -->
+            {% if request.session.errors %}
+              <div class="errorDiv">
+                {% for error in request.session.errors.1 %}
+                  <p>{{error}}</p>
+                {% endfor %}
+              </div>
+            {% endif %}
+        <h2>Success. Welcome, {{ request.session.firstname }}.</h2>
+        {% for message in messages %}
+          <p>{{ message }}</p>
+        {% endfor %}
+
+            <a href="/">Home</a>
+            <a href="show">Show</a>
+
+        </div>
+      </div>  <!-- end of wrapper -->
+    </body>
+</html>

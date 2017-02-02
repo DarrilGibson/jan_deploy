@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta charset="utf-8">
+      <title>Login and Registration</title>
+      {% load staticfiles %}
+      <link rel="stylesheet" href="{% static 'loginreg/css/normalize.css' %}">
+      <link rel="stylesheet" href="{% static 'loginreg/css/styles.css' %}">
+      <link rel="stylesheet" href="{% static 'loginreg/css/form.css' %}">
+    </head>
+    <body>
+      <div id="wrapper">
+        <div id="header">
+          <h2> Registration</h2>
+        </div> <!-- end of header -->
+          <!-- Put div within errors to hide it until needed -->
+            {% if request.session.errors %}
+              <div class="errorDiv">
+                {% for error in messages %}
+                  <p>{{error}}</p>
+                {% endfor %}
+              </div>
+            {% endif %}
+
+          <div class="aligned-form">
+            <h2>Login</h2>
+            <form action='/login' method='POST'>
+              {% csrf_token %}
+              <label for="email"><span>Email: </span><input type="text" name="loginemail"  value={{ request.session.loginemail }}></label>
+              <label for="password"><span>Password: </span><input type=password name="password"></label>
+
+              <p><input type="submit" class="button-primary" value="Login"></p>
+            </form>
+            <p>{{ request.session.msg }}</p>
+            <h2>Registration</h2>
+            <p>If you don't have an account you can register here.</p>
+            <!-- Put div within errors to hide it until needed -->
+              {% if messages %}
+                <div class="errorDiv">
+                  {% for error in messages %}
+                    <p>{{error}}</p>
+                  {% endfor %}
+                </div>
+              {% endif %}
+            <form action='/register' method='POST' >
+              {% csrf_token %}
+              <label for="first_name"><span>First name: </span><input type="text" name="firstname"  value={{ request.session.firstname }}></label>
+              <label for="last_name"><span>Last name: </span><input type="text" name="lastname"  value={{ request.session.lastname }}></label>
+              <label for="email"><span>Email: </span><input type="text" name="email"  value={{ request.session.email }}></label>
+              <label for="password"><span>Password: </span><input type=password name="password"></label>
+              <label for="confirm_pw"><span>Confirm Password: </span><input type=password name="confirm_pw"></label>
+              <p><input type="submit" class="button-primary" value="Register"></p>
+            </form>
+
+
+            <a href="/">Home</a>
+            <a href="show">Show Registered Users</a>
+          </div>
+        </div>
+      </div>  <!-- end of wrapper -->
+    </body>
+</html>

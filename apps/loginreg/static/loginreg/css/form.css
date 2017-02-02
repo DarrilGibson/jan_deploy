@@ -1,0 +1,80 @@
+.aligned-form{
+    max-width: 500px;
+    padding: 20px 12px 10px 20px;
+    font: 13px Arial, Helvetica, sans-serif;
+}
+.aligned-form-heading{
+    font-weight: bold;
+    font-style: italic;
+    border-bottom: 2px solid #ddd;
+    margin-bottom: 20px;
+    font-size: 15px;
+    padding-bottom: 3px;
+}
+.aligned-form label{
+    display: block;
+    margin: 0px 0px 15px 0px;
+}
+.aligned-form label > span{
+    width: 100px;
+    font-weight: bold;
+    float: left;
+    padding-top: 8px;
+    padding-right: 5px;
+}
+.aligned-form span.required{
+    color:red;
+}
+.aligned-form .tel-number-field{
+    width: 40px;
+    text-align: center;
+}
+.aligned-form .-field{
+    width: 48%;
+
+}
+
+.aligned-form .-field,
+.aligned-form .tel-number-field,
+.aligned-form .textarea-field,
+ .aligned-form .select-field{
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    border: 1px solid #C2C2C2;
+    box-shadow: 1px 1px 4px #EBEBEB;
+    -moz-box-shadow: 1px 1px 4px #EBEBEB;
+    -webkit-box-shadow: 1px 1px 4px #EBEBEB;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    padding: 7px;
+    outline: none;
+}
+.aligned-form .-field:focus,
+.aligned-form .tel-number-field:focus,
+.aligned-form .textarea-field:focus,
+.aligned-form .select-field:focus{
+    border: 1px solid #0C0;
+}
+.aligned-form .textarea-field{
+    height:100px;
+    width: 55%;
+}
+.aligned-form [type=submit],
+.aligned-form [type=button]{
+    border: none;
+    background: #0000ff;
+    color: #fff;
+    box-shadow: 1px 1px 4px #DADADA;
+    -moz-box-shadow: 1px 1px 4px #DADADA;
+    -webkit-box-shadow: 1px 1px 4px #DADADA;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+}
+.aligned-form [type=submit]:hover,
+.aligned-form [type=button]:hover{
+    background: #6666ff;
+    color: #fff;
+}
